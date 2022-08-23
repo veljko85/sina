@@ -847,15 +847,27 @@ var createScene = function () {
                     "Pfosten bearbeiten";
                 }
               } else {
-                post.material = scene.getMaterialByID("Wood-Velja");
+                addDefaultMaterial(
+                  sturmankersVorderseite,
+                  sturmankersRuckseite,
+                  sturmankerMat,
+                  allPosts,
+                  fencePostMat,
+                  allWoodPosts,
+                  woodMaterials,
+                  allFences,
+                  woodMaterialType,
+                  addFenceSings,
+                  fencesArr
+                );
                 addFenceSings[0].isVisible = false;
                 addFenceSings[1].isVisible = false;
                 if (leftPosts[0].isVisible) {
                   post.material = fencePostMat;
                   document.getElementsByClassName("accTitle")[0].innerHTML =
                     "ausgewählter Zaun";
-                  // sideAccesories.style.display = "none";
-                  // editPost.style.display = "none";
+                  sideAccesories.style.display = "none";
+                  editPost.style.display = "none";
                 }
               }
             }
