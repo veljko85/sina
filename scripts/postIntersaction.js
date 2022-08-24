@@ -58,7 +58,11 @@ function checkIntPos(
           if (postType == 1) {
             // rightPostCaps[intersectedPosts[i] - 1].isVisible = true;
             allPosts[intersectedPosts[i]].isVisible = true;
-            rightRoots[intersectedPosts[i] - 1].isVisible = true;
+            if (
+              allPosts[intersectedPosts[i]].scaling.z == 1 ||
+              allPosts[intersectedPosts[i]].scaling.z == 0.524
+            )
+              rightRoots[intersectedPosts[i] - 1].isVisible = true;
           }
           if (postType == 0) {
             allWoodPosts[intersectedPosts[i]].isVisible = true;
@@ -71,7 +75,11 @@ function checkIntPos(
         if (postType == 1) {
           // rightPostCaps[intersectedPosts[i] - 1].isVisible = true;
           allPosts[intersectedPosts[i]].isVisible = true;
-          rightRoots[intersectedPosts[i] - 1].isVisible = true;
+          if (
+            allPosts[intersectedPosts[i]].scaling.z == 1 ||
+            allPosts[intersectedPosts[i]].scaling.z == 0.524
+          )
+            rightRoots[intersectedPosts[i] - 1].isVisible = true;
         }
         if (postType == 0) {
           allWoodPosts[intersectedPosts[i]].isVisible = true;
