@@ -3387,7 +3387,7 @@ var createScene = function () {
               deleteAccesorie[1].style.display = "block";
               addNewFenceToSide.style.display = "none";
             } else {
-              a.material = sturmankerMat;
+              a[i].material = sturmankerMat;
               sideAccesories.style.display = "none";
               deleteAccesorie[1].style.display = "none";
             }
