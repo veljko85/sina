@@ -1916,6 +1916,34 @@ var createScene = function () {
             }
           }
         }
+
+        //for main post
+        if (fenceId > 0 && typeof activeFence == "boolean") {
+          if (type != "sina18090" && type != "sinaKosaLeva") {
+            if (leftPosts[0].scaling.z < 0.6) {
+              allWoodPosts[0].scaling.y = 1;
+              allWoodPosts[0].position.y = 0.962;
+              leftPosts[0].scaling.z = 1;
+              leftPosts[0].position.y = 0.962;
+            }
+            if (leftPosts[0].scaling.z > 0.6 && leftPosts[0].scaling.z < 0.9) {
+              allWoodPosts[0].scaling.y = 1.2;
+              allWoodPosts[0].position.y = 0.7717;
+              leftPosts[0].scaling.z = 1.2;
+              leftPosts[0].position.y = 0.7717;
+            }
+            if (leftPosts[0].scaling.z > 0.9 && leftPosts[0].scaling.z < 1) {
+              allWoodPosts[0].scaling.y = 1.475;
+              allWoodPosts[0].position.y = 0.511;
+              leftPosts[0].scaling.z = 1.475;
+              leftPosts[0].position.y = 0.511;
+            }
+            if (allPosts[0].isVisible) {
+              leftPostCaps[0].isVisible = false;
+              leftPostCapClones[0].isVisible = true;
+            }
+          }
+        }
         //set Ground
         setGround();
         // //
@@ -3573,7 +3601,7 @@ var createScene = function () {
       }
 
       //parent
-      if (h > 0) {
+      if (h > 0 && fencesArr[h].parent != undefined) {
         if (
           fencesArr[fencesArr[h].parent].type == "sina18090" ||
           fencesArr[fencesArr[h].parent].type == "sinaKosaDesna"
@@ -3626,7 +3654,19 @@ var createScene = function () {
         }
       }
 
-      if (h == 0) {
+      //for main post
+      let mainPostChildType = 0;
+      for (let i = 0; i < fencesArr.length; i++) {
+        if (
+          fencesArr[i].status == "activeFence" &&
+          fencesArr[i].parent == undefined &&
+          fencesArr[i].type != "sina18090" &&
+          fencesArr[i].type != "sinaKosaLeva"
+        ) {
+          mainPostChildType += 1;
+        }
+      }
+      if (mainPostChildType == 0) {
         if (leftPosts[0].scaling.z < 1.1) {
           allWoodPosts[0].scaling.y = 0.524;
           allWoodPosts[0].position.y = 0.504;
@@ -3649,9 +3689,6 @@ var createScene = function () {
           leftPostCaps[0].isVisible = false;
           leftPostCapClones[0].isVisible = true;
         }
-        // leds[h].scaling.y = 0.524;
-        // leds[h].position.y = 0.5;
-        // leds[h].position.z = 0.001;
       }
     }
     if (d == "sinaKosaDesna") {
@@ -3753,6 +3790,35 @@ var createScene = function () {
         // ledsRight[fencesArr[h].parent].position.z = 0;
         // ledsRight[fencesArr[h].parent].position.y = 0.001;
       }
+      //for main post
+      if (
+        h > 0 &&
+        fencesArr[h].parent == undefined &&
+        fencesArr[h].status == "activeFence"
+      ) {
+        if (leftPosts[0].scaling.z < 0.6) {
+          allWoodPosts[0].scaling.y = 1;
+          allWoodPosts[0].position.y = 0.962;
+          leftPosts[0].scaling.z = 1;
+          leftPosts[0].position.y = 0.962;
+        }
+        if (leftPosts[0].scaling.z > 0.6 && leftPosts[0].scaling.z < 0.9) {
+          allWoodPosts[0].scaling.y = 1.2;
+          allWoodPosts[0].position.y = 0.7717;
+          leftPosts[0].scaling.z = 1.2;
+          leftPosts[0].position.y = 0.7717;
+        }
+        if (leftPosts[0].scaling.z > 0.9 && leftPosts[0].scaling.z < 1) {
+          allWoodPosts[0].scaling.y = 1.475;
+          allWoodPosts[0].position.y = 0.511;
+          leftPosts[0].scaling.z = 1.475;
+          leftPosts[0].position.y = 0.511;
+        }
+        if (leftPosts[0].isVisible) {
+          leftPostCaps[0].isVisible = true;
+          leftPostCapClones[0].isVisible = false;
+        }
+      }
     }
     if (d == "sinaKosaLeva") {
       // ledsRight[h].scaling.z = 1;
@@ -3781,7 +3847,7 @@ var createScene = function () {
         rightPostCapClones[h].isVisible = false;
       }
       //parent
-      if (h > 0) {
+      if (h > 0 && fencesArr[h].parent != undefined) {
         if (
           fencesArr[fencesArr[h].parent].type == "sina18090" ||
           fencesArr[fencesArr[h].parent].type == "sinaKosaDesna"
@@ -3833,8 +3899,19 @@ var createScene = function () {
           }
         }
       }
-
-      if (h == 0) {
+      //for main post
+      let mainPostChildType = 0;
+      for (let i = 0; i < fencesArr.length; i++) {
+        if (
+          fencesArr[i].status == "activeFence" &&
+          fencesArr[i].parent == undefined &&
+          fencesArr[i].type != "sina18090" &&
+          fencesArr[i].type != "sinaKosaLeva"
+        ) {
+          mainPostChildType += 1;
+        }
+      }
+      if (mainPostChildType == 0) {
         if (leftPosts[0].scaling.z < 1.1) {
           allWoodPosts[0].scaling.y = 0.524;
           allWoodPosts[0].position.y = 0.504;
@@ -3857,9 +3934,6 @@ var createScene = function () {
           leftPostCaps[0].isVisible = false;
           leftPostCapClones[0].isVisible = true;
         }
-        // leds[h].scaling.y = 0.524;
-        // leds[h].position.y = 0.5;
-        // leds[h].position.z = 0.001;
       }
     }
     if (d == "sina180180" || d == "sina90180") {
@@ -3949,6 +4023,35 @@ var createScene = function () {
         // ledsRight[fencesArr[h].parent].scaling.z = 1;
         // ledsRight[fencesArr[h].parent].position.z = 0;
         // ledsRight[fencesArr[h].parent].position.y = 0.001;
+      }
+      //for main post
+      if (
+        h > 0 &&
+        fencesArr[h].parent == undefined &&
+        fencesArr[h].status == "activeFence"
+      ) {
+        if (leftPosts[0].scaling.z < 0.6) {
+          allWoodPosts[0].scaling.y = 1;
+          allWoodPosts[0].position.y = 0.962;
+          leftPosts[0].scaling.z = 1;
+          leftPosts[0].position.y = 0.962;
+        }
+        if (leftPosts[0].scaling.z > 0.6 && leftPosts[0].scaling.z < 0.9) {
+          allWoodPosts[0].scaling.y = 1.2;
+          allWoodPosts[0].position.y = 0.7717;
+          leftPosts[0].scaling.z = 1.2;
+          leftPosts[0].position.y = 0.7717;
+        }
+        if (leftPosts[0].scaling.z > 0.9 && leftPosts[0].scaling.z < 1) {
+          allWoodPosts[0].scaling.y = 1.475;
+          allWoodPosts[0].position.y = 0.511;
+          leftPosts[0].scaling.z = 1.475;
+          leftPosts[0].position.y = 0.511;
+        }
+        if (leftPosts[0].isVisible) {
+          leftPostCaps[0].isVisible = true;
+          leftPostCapClones[0].isVisible = false;
+        }
       }
     }
     // //set ground size
@@ -4193,6 +4296,43 @@ var createScene = function () {
         // ledsRight[fencesArr[a].parent].scaling.z = 0.524;
         // ledsRight[fencesArr[a].parent].position.z = 0.46;
         // ledsRight[fencesArr[a].parent].position.y = 0.001;
+      }
+    }
+
+    //for main post
+    let mainPostChildType = 0;
+    for (let i = 0; i < fencesArr.length; i++) {
+      if (
+        fencesArr[i].status == "activeFence" &&
+        fencesArr[i].parent == undefined &&
+        fencesArr[i].type != "sina18090" &&
+        fencesArr[i].type != "sinaKosaLeva"
+      ) {
+        mainPostChildType += 1;
+      }
+    }
+    if (mainPostChildType == 0) {
+      if (leftPosts[0].scaling.z < 1.1) {
+        allWoodPosts[0].scaling.y = 0.524;
+        allWoodPosts[0].position.y = 0.504;
+        leftPosts[0].scaling.z = 0.524;
+        leftPosts[0].position.y = 0.504;
+      }
+      if (leftPosts[0].scaling.z > 1 && leftPosts[0].scaling.z < 1.4) {
+        allWoodPosts[0].scaling.y = 0.724;
+        allWoodPosts[0].position.y = 0.3119;
+        leftPosts[0].scaling.z = 0.724;
+        leftPosts[0].position.y = 0.3119;
+      }
+      if (leftPosts[0].scaling.z > 1.4) {
+        allWoodPosts[0].scaling.y = 0.999;
+        allWoodPosts[0].position.y = 0.053;
+        leftPosts[0].scaling.z = 0.999;
+        leftPosts[0].position.y = 0.053;
+      }
+      if (leftPosts[0].isVisible) {
+        leftPostCaps[0].isVisible = false;
+        leftPostCapClones[0].isVisible = true;
       }
     }
     //
