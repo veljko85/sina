@@ -1734,7 +1734,7 @@ var createScene = function () {
         if (type == "sinaKosaDesna") {
           sinaKosaDesna.isVisible = true;
           rightWoodPost.scaling.y = 0.524;
-          rightWoodPost.position.y = 0.504;
+          rightWoodPost.position.y = 0.532;
           rightPost.scaling.z = 0.524;
           rightPost.position.y = 0.504;
           if (postType == 1) {
@@ -1778,7 +1778,7 @@ var createScene = function () {
         if (type == "sina18090") {
           sina18090.isVisible = true;
           rightWoodPost.scaling.y = 0.524;
-          rightWoodPost.position.y = 0.504;
+          rightWoodPost.position.y = 0.532;
           rightPost.scaling.z = 0.524;
           rightPost.position.y = 0.504;
           if (postType == 1) {
@@ -1888,7 +1888,7 @@ var createScene = function () {
             // ledsRight[fencesArr[fenceId].parent].position.y = 0.001;
             if (rightPosts[fencesArr[fenceId].parent].scaling.z < 0.6) {
               rightWoodPosts[fencesArr[fenceId].parent].scaling.y = 1;
-              rightWoodPosts[fencesArr[fenceId].parent].position.y = 0.935;
+              rightWoodPosts[fencesArr[fenceId].parent].position.y = 0.962;
               rightPosts[fencesArr[fenceId].parent].scaling.z = 1;
               rightPosts[fencesArr[fenceId].parent].position.y = 0.962;
             }
@@ -2979,7 +2979,7 @@ var createScene = function () {
     for (let i = 0; i < fencesArr.length; i++) {
       if (
         fencesArr[i].type == "sina18090" ||
-        fencesArr[i].type == "sinaKosaLeva"
+        fencesArr[i].type == "sinaKosaDesna"
       ) {
         rightPostCapClones[i].isVisible = a;
       } else {
@@ -3575,7 +3575,7 @@ var createScene = function () {
       if (childType == 0) {
         if (rightPosts[h].scaling.z < 1.1) {
           rightWoodPosts[h].scaling.y = 0.524;
-          rightWoodPosts[h].position.y = 0.504;
+          rightWoodPosts[h].position.y = 0.532;
           rightPosts[h].scaling.z = 0.524;
           rightPosts[h].position.y = 0.504;
         }
@@ -3624,7 +3624,7 @@ var createScene = function () {
           if (fenceSibling < 1) {
             if (rightPosts[fencesArr[h].parent].scaling.z < 1.1) {
               rightWoodPosts[fencesArr[h].parent].scaling.y = 0.524;
-              rightWoodPosts[fencesArr[h].parent].position.y = 0.504;
+              rightWoodPosts[fencesArr[h].parent].position.y = 0.532;
               rightPosts[fencesArr[h].parent].scaling.z = 0.524;
               rightPosts[fencesArr[h].parent].position.y = 0.504;
             }
@@ -3669,7 +3669,7 @@ var createScene = function () {
       if (mainPostChildType == 0) {
         if (leftPosts[0].scaling.z < 1.1) {
           allWoodPosts[0].scaling.y = 0.524;
-          allWoodPosts[0].position.y = 0.504;
+          allWoodPosts[0].position.y = 0.532;
           leftPosts[0].scaling.z = 0.524;
           leftPosts[0].position.y = 0.504;
         }
@@ -3705,7 +3705,7 @@ var createScene = function () {
       if (childType == 0) {
         if (rightPosts[h].scaling.z < 1.1) {
           rightWoodPosts[h].scaling.y = 0.524;
-          rightWoodPosts[h].position.y = 0.504;
+          rightWoodPosts[h].position.y = 0.532;
           rightPosts[h].scaling.z = 0.524;
           rightPosts[h].position.y = 0.504;
         }
@@ -3870,7 +3870,7 @@ var createScene = function () {
           if (fenceSibling < 1) {
             if (rightPosts[fencesArr[h].parent].scaling.z < 1.1) {
               rightWoodPosts[fencesArr[h].parent].scaling.y = 0.524;
-              rightWoodPosts[fencesArr[h].parent].position.y = 0.504;
+              rightWoodPosts[fencesArr[h].parent].position.y = 0.532;
               rightPosts[fencesArr[h].parent].scaling.z = 0.524;
               rightPosts[fencesArr[h].parent].position.y = 0.504;
             }
@@ -3914,7 +3914,7 @@ var createScene = function () {
       if (mainPostChildType == 0) {
         if (leftPosts[0].scaling.z < 1.1) {
           allWoodPosts[0].scaling.y = 0.524;
-          allWoodPosts[0].position.y = 0.504;
+          allWoodPosts[0].position.y = 0.532;
           leftPosts[0].scaling.z = 0.524;
           leftPosts[0].position.y = 0.504;
         }
@@ -4270,7 +4270,7 @@ var createScene = function () {
       if (childTypee == 0) {
         if (rightPosts[fencesArr[a].parent].scaling.z < 1.1) {
           rightWoodPosts[fencesArr[a].parent].scaling.y = 0.524;
-          rightWoodPosts[fencesArr[a].parent].position.y = 0.504;
+          rightWoodPosts[fencesArr[a].parent].position.y = 0.532;
           rightPosts[fencesArr[a].parent].scaling.z = 0.524;
           rightPosts[fencesArr[a].parent].position.y = 0.504;
         }
@@ -4314,7 +4314,7 @@ var createScene = function () {
     if (mainPostChildType == 0) {
       if (leftPosts[0].scaling.z < 1.1) {
         allWoodPosts[0].scaling.y = 0.524;
-        allWoodPosts[0].position.y = 0.504;
+        allWoodPosts[0].position.y = 0.532;
         leftPosts[0].scaling.z = 0.524;
         leftPosts[0].position.y = 0.504;
       }
